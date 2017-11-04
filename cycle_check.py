@@ -11,17 +11,12 @@ class Node(object):
 
 
 def has_cycle(head):
-    if(head is None):
-        return 0
-    else:
-        marker1 = head
-        marker2 = head
-
-        while marker2 != None and marker2.next != None:
-            marker1 = marker1.next
-            marker2 = marker2.next.next
-            
-            if marker1.data == marker2.data:
-                return 1
-        return 0
+    current = head
+    seen = set()
+    while current:
+        if current in seen:
+            return 1
+        seen.add(current)
+        current = current.next
+    return 0
         
