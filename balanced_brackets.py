@@ -6,8 +6,11 @@ def is_matched(expression):
         if (i in keys):
             stack.append(brackets[i])
         else:
-            if(stack[-1] == i):
-                stack.pop()
+            if(len(stack) == 0):
+                return False
+            else:
+                if(stack[-1] == i ):
+                    stack.pop()
     if len(stack) == 0:
         return True
     else: 
