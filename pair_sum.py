@@ -9,8 +9,6 @@ would return 2 pairs:
  (2,2)
 NOTE: FOR TESTING PURPOSES< CHANGE YOUR FUNCTION SO IT OUTPUTS THE NUMBER OF PAIRS
 
-
-
 Solution
 """
 
