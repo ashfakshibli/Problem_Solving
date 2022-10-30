@@ -42,3 +42,22 @@ class Solution:
             n = squareDigitSum(n) # Better space
             #n = sum([int(i) ** 2 for i in str(n)]) # Better time
         return n == 1
+
+        """
+        # Two pointer cycle detection solution
+        
+        def isHappy(self, n: int) -> bool:
+            def squareDigitSum(num: int):
+                sumNum = 0
+                while int(num) > 0:
+                    sumNum += (num % 10) ** 2
+                    num = int(num / 10)                
+                return sumNum
+            # Two pointer cycle detection
+            slow = n
+            fast = squareDigitSum(n)
+            while fast != 1 and fast != slow:
+                slow = squareDigitSum(slow)
+                fast = squareDigitSum(squareDigitSum(fast))
+            return fast == 1
+        """
